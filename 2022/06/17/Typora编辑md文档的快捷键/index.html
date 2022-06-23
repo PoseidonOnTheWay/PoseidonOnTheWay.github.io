@@ -241,7 +241,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="7">
-<input type="hidden" id="yelog_site_word_count" value="3.1k">
+<input type="hidden" id="yelog_site_word_count" value="4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -452,12 +452,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-06-23 22:36:59'>2022-06-17 22:36</time>
+            Created At : <time class="date" title='Updated At: 2022-06-23 22:45:08'>2022-06-17 22:36</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:959</span>
+        <span>Count:1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -551,8 +551,7 @@
 <p>(3)、操作： operation</p>
 <p>(4)、条件：condition</p>
 <p>(5)、子程序：subroutine</p>
-<pre><code class="flow">```flow
-st=&gt;start: Start:&gt;https://www.zybuluo.com
+<pre><code>st=&gt;start: Start:&gt;https://www.zybuluo.com
 io=&gt;inputoutput: verification
 op=&gt;operation: Your Operaiton
 cond=&gt;condition: yes or No?
@@ -562,7 +561,17 @@ e=&gt;end
 st-&gt;io-&gt;op-&gt;cond
 cond(yes)-&gt;e
 cond(no)-&gt;sub-&gt;io
-```
+</code></pre>
+<pre><code class="flow">st=&gt;start: Start:&gt;https://www.zybuluo.com
+io=&gt;inputoutput: verification
+op=&gt;operation: Your Operaiton
+cond=&gt;condition: yes or No?
+sub=&gt;subroutine: Your Subroutine 
+e=&gt;end 
+
+st-&gt;io-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;sub-&gt;io
 </code></pre>
 <h2 id="12、数学公式ctrl-shift-m"><a href="#12、数学公式ctrl-shift-m" class="headerlink" title="12、数学公式ctrl+shift+m"></a><strong>12、数学公式</strong>ctrl+shift+m</h2><p>使用<code>$</code>表示，其中一个$ 表示在行内，两个$表示独占一行。</p>
 <p>支持 <strong>LaTeX</strong> 编辑显示支持，访问 <a target="_blank" rel="noopener" href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">MathJax </a>参考更多使用方法。</p>
@@ -580,7 +589,11 @@ cond(no)-&gt;sub-&gt;io
 <h2 id="14、思维导图"><a href="#14、思维导图" class="headerlink" title="14、思维导图"></a><strong>14、思维导图</strong></h2><p>输入```mermaid，即可初始化一张空白图。</p>
 <p>流程图实例：</p>
 <p>语法解释TD即自上而下，LR即自左向右。</p>
-<p>graph TD;<br>    内容–&gt;核心;<br>    内容–&gt;标题;<br>    核心–&gt;注意点;</p>
+<pre><code>graph TD;
+    内容--&gt;核心;
+    内容--&gt;标题;
+    核心--&gt;注意点;
+</code></pre>
 <p>效果：</p>
 <pre class="mermaid">graph TD;
     内容-->核心;
