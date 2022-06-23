@@ -452,7 +452,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-06-23 20:26:11'>2022-06-17 22:36</time>
+            Created At : <time class="date" title='Updated At: 2022-06-23 20:59:02'>2022-06-17 22:36</time>
         
     </div>
     <div class="article-meta">
@@ -579,20 +579,24 @@ cond(no)-&gt;sub-&gt;io
 <p><a href="#top">点我跳转</a>回到顶部</p>
 <h2 id="14、思维导图"><a href="#14、思维导图" class="headerlink" title="14、思维导图"></a><strong>14、思维导图</strong></h2><p>输入<pre class="mermaid">，即可初始化一张空白图。</p>
 <p>流程图实例：</p>
-<p>语法解释TD即自上而下，LR即自左向右。</pre><br>graph TD;<br>    内容–&gt;核心;<br>    内容–&gt;标题;<br>    核心–&gt;注意点;</p>
-<pre><code>
-&lt;pre class=&quot;mermaid&quot;&gt;
+<p>语法解释TD即自上而下，LR即自左向右。</pre></p>
+<pre class="mermaid">graph TD;
+    内容-->核心;
+    内容-->标题;
+    核心-->注意点;</pre>
+
+<pre class="mermaid">
 graph TD;
-    内容--&gt;核心;
-    内容--&gt;标题;
-    核心--&gt;注意点;&lt;/pre&gt;
+    内容-->核心;
+    内容-->标题;
+    核心-->注意点;</pre>
 
-时序图实例：
+<p>时序图实例：</p>
+<p>语法解释：-&gt;&gt;代表实线，- -&gt;&gt;则代表虚线。</p>
+<pre><code>&lt;pre class=&quot;mermaid&quot;&gt;sequenceDiagram
+    Alice-&gt;&gt;John: hello John，how are you?
+    John--&gt;&gt;Alice: Great!&lt;/pre&gt;
 
-语法解释：-&gt;&gt;代表实线，- -&gt;&gt;则代表虚线。
-</code></pre>
-<p>sequenceDiagram<br>    Alice-&gt;&gt;John: hello John，how are you?<br>    John–&gt;&gt;Alice: Great!</p>
-<pre><code>
 效果：
 
 
@@ -605,22 +609,39 @@ graph TD;
 
 语法解释：[*]表示开始或者结束，如果在箭头右边则表示结束；
 </code></pre>
-<p>stateDiagram<br>    [<em>]–&gt;s1<br>    s1–&gt;[</em>]</p>
-<pre><code>
-效果：
+<pre class="mermaid">stateDiagram
+    [*]-->s1
+    s1-->[*]</pre>
 
+<p>效果：</p>
+<pre class="mermaid">stateDiagram
+    [*]-->s1
+    s1-->[*]</pre>
 
+<p>类图：</p>
+<p>语法解释：&lt;|– 表示继承，+表示public，-表示private;</p>
+<pre><code>&lt;pre class=&quot;mermaid&quot;&gt;classDiagram
+    Animal &lt;|-- Duck
+    Animal &lt;|-- Fish
+    Animal &lt;|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal : +isMammal()
+    Animal：+mate()
+    class Duck&#123;
+        +String beakColor
+        +swim()
+        +quack()
+        &#125;
+    class Fish&#123;
+        -int sizeInFeet
+        -canEat()
+        &#125;
+    class Zebra&#123;
+        +bool is_wild
+        +run()
+        &#125;&lt;/pre&gt;
 
-&lt;pre class=&quot;mermaid&quot;&gt;stateDiagram
-    [*]--&gt;s1
-    s1--&gt;[*]&lt;/pre&gt;
-
-类图：
-
-语法解释：&lt;|-- 表示继承，+表示public，-表示private;
-</code></pre>
-<p>classDiagram<br>    Animal &lt;|– Duck<br>    Animal &lt;|– Fish<br>    Animal &lt;|– Zebra<br>    Animal : +int age<br>    Animal : +String gender<br>    Animal : +isMammal()<br>    Animal：+mate()<br>    class Duck{<br>        +String beakColor<br>        +swim()<br>        +quack()<br>        }<br>    class Fish{<br>        -int sizeInFeet<br>        -canEat()<br>        }<br>    class Zebra{<br>        +bool is_wild<br>        +run()<br>        }</p>
-<pre><code>
 
 
 效果：
@@ -655,13 +676,18 @@ graph TD;
 
 语法也非常简单，从上到下依次是图片标题，日期格式，项目，项目细分的任务。
 </code></pre>
-<p>gantt<br>    title 工作计划<br>    dateFormat YYYY-MM-DD<br>    section Section<br>    A task  :a1, 2020-01-01,30d<br>    Another task :after a1, 20d<br>    section Another<br>    Task in sec  :2020-01-12, 12d<br>    another task :24d</p>
-<pre><code>
-效果
+<pre class="mermaid">gantt
+    title 工作计划
+    dateFormat YYYY-MM-DD
+    section Section
+    A task  :a1, 2020-01-01,30d
+    Another task :after a1, 20d
+    section Another
+    Task in sec  :2020-01-12, 12d
+    another task :24d</pre>
 
-
-
-&lt;pre class=&quot;mermaid&quot;&gt;gantt
+<p>效果</p>
+<pre class="mermaid">gantt
     title 工作计划
     dateFormat YYYY-MM-DD
     section Section
@@ -669,14 +695,17 @@ graph TD;
     Another task :after a1, 20d
     section Another
     Task in sec :2020-01-12,12d
-    another task: 24d&lt;/pre&gt;
+    another task: 24d</pre>
 
-饼图：
+<p>饼图：</p>
+<p>饼图使用pie表示，标题下面分别是区域名称及其百分比。</p>
+<pre><code>&lt;pre class=&quot;mermaid&quot;&gt;pie
+    title Key elements in Product X
+    &quot;Calcium&quot;: 42.96
+    &quot;Potassium&quot;: 50.05
+    &quot;Magnesium&quot;: 10.01
+    &quot;Iron&quot; : 5&lt;/pre&gt;
 
-饼图使用pie表示，标题下面分别是区域名称及其百分比。
-</code></pre>
-<p>pie<br>    title Key elements in Product X<br>    “Calcium”: 42.96<br>    “Potassium”: 50.05<br>    “Magnesium”: 10.01<br>    “Iron” : 5</p>
-<pre><code>
 
 
 
