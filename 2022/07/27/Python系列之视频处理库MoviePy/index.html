@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MAC软件推荐 | 海神之路</title>
-  <meta name="keywords" content=" MAC , 软件 ">
-  <meta name="description" content="MAC软件推荐 | 海神之路">
+  <title>Python系列之视频处理库MoviePy | 海神之路</title>
+  <meta name="keywords" content=" Python库 , MoviePy ">
+  <meta name="description" content="Python系列之视频处理库MoviePy | 海神之路">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="创建时间：2022-6-17  编辑时间：2022-8-4  个人简介 黄海 座右铭：❤️ stay hungry ,stay foolish !❤️ 曾在杭州蚂蚁金服工作；不能解决问题的技术都不是好技术； 毕业于南昌大学科学技术学院，非计算机科班出身，目前在杭州工作； 喜欢研究新技术和了解远程工作的发展方向。如果你发现好玩的，可以告诉我吗？ 最近 在学习前端知识；学习如何管理员工；如何推广业务；">
 <meta property="og:type" content="website">
@@ -549,9 +549,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-MAC软件推荐" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Python系列之视频处理库MoviePy" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MAC软件推荐</h1>
+        <h1 class="article-title">Python系列之视频处理库MoviePy</h1>
     
     <div class="article-meta">
         
@@ -569,21 +569,21 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">MAC</a>
+            <a class="color3">Python库</a>
             
-            <a class="color3">软件</a>
+            <a class="color3">MoviePy</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-08-17 21:58:56'>2022-08-14 17:33</time>
+            Created At : <time class="date" title='Updated At: 2022-08-17 21:59:51'>2022-07-27 16:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:15</span>
+        <span>Count:668</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -613,7 +613,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81"><span class="toc-text">一、</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFMoviePy"><span class="toc-text">一、什么是MoviePy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85MoviePy"><span class="toc-text">二、安装MoviePy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BD%BF%E7%94%A8MoviePy"><span class="toc-text">三、使用MoviePy</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -629,9 +629,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div id="top" class="top">创建时间2022-8-14  编辑时间：2022-8-17</div>
+        <div class="top" id="top">创建时间：2022-0727 编辑时间：2022-7-27</div>
 
-<h1 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h1>
+<h1 id="一、什么是MoviePy"><a href="#一、什么是MoviePy" class="headerlink" title="一、什么是MoviePy"></a>一、什么是MoviePy</h1><p>MoviePy是一个用于视频编辑的 Python 库：剪切、串联、标题插入、视频合成（又名非线性编辑）、视频处理和创建自定义效果。MoviePy 可以读取和写入所有最常见的音频和视频格式，包括 GIF，并在 Windows&#x2F;Mac&#x2F;Linux 上运行，使用 Python 3.6+。</p>
+<h1 id="二、安装MoviePy"><a href="#二、安装MoviePy" class="headerlink" title="二、安装MoviePy"></a>二、安装MoviePy</h1><p>MoviePy 依赖于 Python 模块 NumPy、Imageio、Decorator和Proglog，它们将在 MoviePy 安装期间自动安装。在您第一次使用 MoviePy 时，软件 FFMPEG 应该会自动下载&#x2F;安装（通过 imageio）（安装需要几秒钟）。如果要使用特定版本的 FFMPEG，请按照说明进行操作修改config_defaults.py。</p>
+<p>手动安装：从PyPI下载源代码，或者，如果您想要开发版本，从GitHub 将所有内容解压缩到一个文件夹中，打开终端并键入：</p>
+<pre><code>$(sudo) python setup.py install 
+</code></pre>
+<p>使用 pip 安装：如果已pip安装，只需在终端中输入：</p>
+<pre><code class="shell">$ (sudo) pip install moviepy
+</code></pre>
+<p>如果你既没有setuptools也没有ez_setup安装，上面的命令就会失败。在这种情况下，在安装之前输入：</p>
+<pre><code class="shell">$ (sudo) pip install setuptools
+</code></pre>
+<p>可选但有用的依赖项<br>您可以moviepy通过以下方式安装所有依赖项：</p>
+<pre><code class="shell">$ (sudo) pip install moviepy[可选]
+</code></pre>
+<p>ImageMagick不是严格要求的，但如果您想合并文本则需要。它也可以用作 GIF 的后端，尽管您也可以在没有 ImageMagick 的情况下使用 MoviePy 创建 GIF。</p>
+<p>安装 ImageMagick 后，MoviePy 将尝试自动检测其可执行文件的路径。如果失败，您仍然可以通过设置环境变量来配置它（请参阅文档）。</p>
+<p>pygame的需要对视频和音频预览（如果你打算用MoviePy工作的服务器上不相关，但必不可少的先进视频手工编辑）。</p>
+<p>对于高级图像处理，您将需要以下一个或多个软件包：</p>
+<p>Python Imaging Library (PIL) 或者更好的是它的分支Pillow。<br>如果未安装 PIL 和 OpenCV，Scipy（用于跟踪、分割等）可用于调整视频剪辑的大小。<br>一些高级图像处理可能需要Scikit Image。<br>cv2某些高级图像处理可能需要OpenCV 2.4.6或更新版本（提供包的版本）。<br>Matplotlib<br>例如，使用该方法clip.resize需要至少安装 Scipy、PIL、Pillow 或 OpenCV 之一。</p>
+<h1 id="三、使用MoviePy"><a href="#三、使用MoviePy" class="headerlink" title="三、使用MoviePy"></a>三、使用MoviePy</h1><blockquote>
+<p>翻转视频180度,并限制宽度播放。</p>
+</blockquote>
+<pre><code class="python">from  moviepy.editort import *
+# load the clip ,rotate it 180,and display
+clip = VideoFileClip(&quot;likeyou.mp4&quot;).rotate(180)
+clip.ipython_display(with=280)
+</code></pre>
+<blockquote>
+<p>加速视频。</p>
+</blockquote>
+<pre><code class="python">from moviepy.editor import *
+clip = VideoFileClip(&#39;./likeyou.mp4&#39;)
+video_1 = clip.speedx(2)         #调整视频播放速
+video_1.write_videofile(&#39;likeyou2.mp4&#39;)
+</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 主题来源于https://github.com/yelog </span>
     </div>
