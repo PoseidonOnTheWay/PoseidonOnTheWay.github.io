@@ -140,7 +140,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(14)</small>
+                <small>(15)</small>
             
         </div>
     </li>
@@ -254,8 +254,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="14">
-<input type="hidden" id="yelog_site_word_count" value="11.5k">
+<input type="hidden" id="yelog_site_posts_number" value="15">
+<input type="hidden" id="yelog_site_word_count" value="12k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -393,6 +393,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>看过的书</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>自考</a>
             </li>
         
@@ -418,6 +422,14 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class="All "
+           href="/2022/08/23/%E4%B9%A6%E5%8D%95/"
+           data-tag="看过的书"
+           data-author="" >
+            <span class="post-title" title="书单">书单</span>
+            <span class="post-date" title="2022-08-23 22:29:29">2022/08/23</span>
+        </a>
         
         <a  class="All 工具 "
            href="/2022/08/17/Python%E7%B3%BB%E5%88%97%E4%B9%8B%E7%8E%A9%E8%BD%AC%E6%95%B0%E6%8D%AE%E5%BA%93PyMySQL/"
@@ -519,7 +531,7 @@
            href="/2022/06/16/%E6%88%90%E4%BA%BA%E9%AB%98%E8%80%83/"
            data-tag="浙江,成人高考"
            data-author="" >
-            <span class="post-title" title="成人高考">成人高考</span>
+            <span class="post-title" title="学历教育">学历教育</span>
             <span class="post-date" title="2022-06-16 12:31:46">2022/06/16</span>
         </a>
         
@@ -578,12 +590,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-08-18 21:34:08'>2022-07-27 16:01</time>
+            Created At : <time class="date" title='Updated At: 2022-08-23 22:35:26'>2022-07-27 16:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:766</span>
+        <span>Count:1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -675,6 +687,49 @@ clip1 = VideoFileClip(&quot;G:\工作\抖音放微信.mp4&quot;).margin(1) # 设
 clip2 = clip1.fx( vfx.mirror_x)
 #导出地址，替换掉下面的视频本地地址
 clip2.resize(width=480).write_videofile(&quot;G:\工作\my_stack.mp4&quot;)
+</code></pre>
+<blockquote>
+<p>裁剪视频局部位置视频</p>
+</blockquote>
+<pre><code class="python">#! usr/bin/python3
+# -*-encoding:UTF-8-*-
+
+my_clip=VideoFileClip(r&quot;替换视频本地绝对位置&quot;)
+my_clip.show(5,interactive = True)# 抽取第五秒帧，方便查看坐标
+# 裁剪视频
+my_clip.fx(vfx.crop,0,360,720,850) #分别对应左上角和右下角的坐标
+my_clip.write_videofile(r&quot;替换希望新视频保存的地址&quot;)
+my_clip.close()
+# 预览视频
+my_clip.preview()
+</code></pre>
+<blockquote>
+<p>截取视频固定时间点的内容</p>
+</blockquote>
+<pre><code class="python">import time
+from moviepy.editor import *
+ 
+if __name__ == &#39;__main__&#39;:
+    
+    video_clip = VideoFileClip(&#39;some.mp4&#39;).subclip(10, 20)
+ 
+    # 截取视频全部，相当于没做处理
+    # video_clip = video_clip.subclip()         
+ 
+    # 从视频的 `第10秒` 截取到 `结尾`
+    video_clip = video_clip.subclip(10)
+ 
+    # 从视频的 `第10秒` 截取到结尾的 `前两秒`
+    # video_clip = video_clip.subclip(10, -2)                  
+ 
+    # 从视频的 `第1分35秒` 截取到 `3分10秒`
+    # video_clip = video_clip.subclip((1, 35), (3, 10))        
+ 
+    # 从视频的 `第1小时2分18秒` 截取到 `第2小时1分34秒`
+    # video_clip = video_clip.subclip((1, 2, 18), (2, 1, 34)) 
+    
+    new_file = str(int(time.time())) + &#39;_subclip.mp4&#39;
+    video_clip.write_videofile(new_file)
 </code></pre>
 
       
